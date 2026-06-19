@@ -12,8 +12,8 @@
 	--text-color-popup: #ffffff;
 }
 
-body{
-    font-size: 10px;
+body {
+	font-size: 10px;
 }
 
 .App {
@@ -24,29 +24,29 @@ body{
 	align-items: center;
 }
 
-.tab-content{
-    font-size: 1rem;
-    margin-top: 0.3rem;
+.tab-content {
+	font-size: 1rem;
+	margin-top: 0.3rem;
 	width: 40rem;
-    height: 8rem;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 20px;
-    padding: 1rem;
+	height: 8rem;
+	background-color: var(--primary-color);
+	color: white;
+	border-radius: 20px;
+	padding: 1rem;
 	text-align: center;
 }
 
-.how-use{
-    font-size: 1.3rem;
-    margin-bottom: .5rem;
+.how-use {
+	font-size: 1.3rem;
+	margin-bottom: 0.5rem;
 }
 
 footer {
 	text-align: center;
-    font-size: 1rem;
+	font-size: 1rem;
 }
 
-.popup{
+.popup {
 	background-color: var(--primary-color);
 	position: fixed;
 	bottom: 10px;
@@ -54,20 +54,19 @@ footer {
 	height: 15rem;
 	padding: 2rem;
 	justify-items: center;
-	color:	var(--text-color-popup);
+	color: var(--text-color-popup);
 	border-radius: 20px;
 	font-size: 1rem;
 	display: flex;
 	flex-direction: column;
-	.cookie{
+	.cookie {
 		display: block;
 		width: 5em;
 		height: 5rem;
-		margin-bottom: .3rem;
+		margin-bottom: 0.3rem;
 	}
-	
 }
-.saudacao{
+.saudacao {
 	display: flex;
 	flex-direction: column;
 	position: fixed;
@@ -76,8 +75,8 @@ footer {
 	padding: 1rem;
 	background-color: var(--secondary-color);
 	border-radius: 20px;
-	
-	.fechar{
+
+	.fechar {
 		margin-top: 0.2rem;
 	}
 }

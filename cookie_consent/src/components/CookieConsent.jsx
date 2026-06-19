@@ -26,13 +26,26 @@ export default function CookieConsent() {
 
 	return (
 		<div className="popup">
-
-			<img className="cookie" src="/assets/cookie-clicker.svg" alt="imagem de um cookie" />
+			<img
+				className="cookie"
+				src="/assets/cookie-clicker.svg"
+				alt="imagem de um cookie"
+			/>
 			<p>Usamos cookies para melhorar sua experiência.</p>
-			<Button sx={{marginTop: .5}} variant="outlined"  className="reject" onClick={aceitarCookies}>
+			<Button
+				sx={{ marginTop: 0.5 }}
+				variant="outlined"
+				className="reject"
+				onClick={aceitarCookies}
+			>
 				Aceitar Cookies!
 			</Button>
-			<Button sx={{marginTop: .5}} variant="outlined" className="accept" onClick={recusarCookies}>
+			<Button
+				sx={{ marginTop: 0.5 }}
+				variant="outlined"
+				className="accept"
+				onClick={recusarCookies}
+			>
 				Rejeitar Cookies!
 			</Button>
 		</div>
