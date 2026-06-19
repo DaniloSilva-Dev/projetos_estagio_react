@@ -2,9 +2,9 @@ import { useState } from "react";
 import "./App.css";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import CookieConsent from "./components/CookieConsent";
-import Conteudo from "./components/Conteudo";
-import Saudacao from "./components/Saudacao";
+import CookieConsent from "./components/cookie_consent";
+import Conteudo from "./components/conteudo";
+import Saudacao from "./components/saudacao";
 
 function App() {
 	const [abaSelecionada, setAbaSelecionada] = useState("primeira");

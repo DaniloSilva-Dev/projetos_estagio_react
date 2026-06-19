@@ -28,7 +28,7 @@ export default function CookieConsent() {
 		<div className="popup">
 			<img
 				className="cookie"
-				src="/assets/cookie-clicker.svg"
+				src="/assets/cookie_clicker.svg"
 				alt="imagem de um cookie"
 			/>
 			<p>Usamos cookies para melhorar sua experiência.</p>
