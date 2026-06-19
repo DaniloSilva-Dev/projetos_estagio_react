@@ -10,8 +10,8 @@
 	--seleceted-color: #6cb1c293;
 	--text-color: #333;
 }
-body{
-    font-size: 10px;
+body {
+	font-size: 10px;
 }
 
 .App {
@@ -22,22 +22,22 @@ body{
 	align-items: center;
 }
 
-.tab-content{
-    font-size: 1rem;
-    margin-top: 0.3rem;
+.tab-content {
+	font-size: 1rem;
+	margin-top: 0.3rem;
 	width: 40rem;
-    height: 8rem;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 20px;
-    padding: 1rem;
+	height: 8rem;
+	background-color: var(--primary-color);
+	color: white;
+	border-radius: 20px;
+	padding: 1rem;
 	text-align: center;
 }
-.how-use{
-    font-size: 1.3rem;
-    margin-bottom: .5rem;
+.how-use {
+	font-size: 1.3rem;
+	margin-bottom: 0.5rem;
 }
 footer {
 	text-align: center;
-    font-size: 1rem;
+	font-size: 1rem;
 }

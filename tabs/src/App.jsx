@@ -16,7 +16,7 @@ function App() {
 						justifyContent: "flex-start",
 						gap: 2,
 						marginTop: 2,
-						marginBottom: 2
+						marginBottom: 2,
 					}}
 				>
 					<Button
@@ -31,7 +31,7 @@ function App() {
 					</Button>
 					<Button
 						sx={{
-							color: abaSelecionada  === "segunda" ? "blue" : "text.primary",
+							color: abaSelecionada === "segunda" ? "blue" : "text.primary",
 						}}
 						variant="text"
 						size="medium"
@@ -41,7 +41,7 @@ function App() {
 					</Button>
 					<Button
 						sx={{
-							color: abaSelecionada  === "terceira" ? "blue" : "text.primary",
+							color: abaSelecionada === "terceira" ? "blue" : "text.primary",
 						}}
 						variant="text"
 						size="medium"
@@ -51,7 +51,7 @@ function App() {
 					</Button>
 					<Button
 						sx={{
-							color: abaSelecionada  === "quarta" ? "blue" : "text.primary",
+							color: abaSelecionada === "quarta" ? "blue" : "text.primary",
 						}}
 						variant="text"
 						size="medium"
@@ -60,9 +60,11 @@ function App() {
 						Fourth Tab
 					</Button>
 				</Box>
-				<p className="how-use">Clique em cada botão para ser mostrado o seu respectivo conteúdo.</p>
+				<p className="how-use">
+					Clique em cada botão para ser mostrado o seu respectivo conteúdo.
+				</p>
 				<section className="tab-content">
-					<Conteudo abaAtiva={abaSelecionada}/>
+					<Conteudo abaAtiva={abaSelecionada} />
 				</section>
 			</main>
 			<footer>&copy; Licenciado sob MIT</footer>
