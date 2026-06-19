@@ -1,122 +1,74 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Conteudo from "./components/Conteudo";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+	const [abaSelecionada, setAbaSelecionada] = useState("primeira");
+	return (
+		<>
+			<main className="App">
+				<Box
+					sx={{
+						flexDirection: "row",
+						display: "flex",
+						justifyContent: "flex-start",
+						gap: 2,
+						marginTop: 2,
+						marginBottom: 2,
+					}}
+				>
+					<Button
+						sx={{
+							color: abaSelecionada === "primeira" ? "blue" : "text.primary",
+						}}
+						variant="text"
+						size="medium"
+						onClick={() => setAbaSelecionada("primeira")}
+					>
+						First Tab
+					</Button>
+					<Button
+						sx={{
+							color: abaSelecionada === "segunda" ? "blue" : "text.primary",
+						}}
+						variant="text"
+						size="medium"
+						onClick={() => setAbaSelecionada("segunda")}
+					>
+						Second Tab
+					</Button>
+					<Button
+						sx={{
+							color: abaSelecionada === "terceira" ? "blue" : "text.primary",
+						}}
+						variant="text"
+						size="medium"
+						onClick={() => setAbaSelecionada("terceira")}
+					>
+						Third Tab
+					</Button>
+					<Button
+						sx={{
+							color: abaSelecionada === "quarta" ? "blue" : "text.primary",
+						}}
+						variant="text"
+						size="medium"
+						onClick={() => setAbaSelecionada("quarta")}
+					>
+						Fourth Tab
+					</Button>
+				</Box>
+				<p className="how-use">
+					Clique em cada botão para ser mostrado o seu respectivo conteúdo.
+				</p>
+				<section className="tab-content">
+					<Conteudo abaAtiva={abaSelecionada} />
+				</section>
+			</main>
+			<footer>&copy; Licenciado sob MIT</footer>
+		</>
+	);
 }
-
-export default App
+export default App;
