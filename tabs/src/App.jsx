@@ -2,10 +2,10 @@ import { useState } from "react";
 import "./App.css";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import RenderizarCondicional from "./components/ExibirCondicional";
+import Conteudo from "./components/Conteudo";
 
 function App() {
-	const [selectedTab, setSelectedTab] = useState(1);
+	const [abaSelecionada, setAbaSelecionada] = useState("primeira");
 	return (
 		<>
 			<main className="App">
@@ -16,57 +16,55 @@ function App() {
 						justifyContent: "flex-start",
 						gap: 2,
 						marginTop: 2,
-						marginBottom: 2
+						marginBottom: 2,
 					}}
 				>
 					<Button
 						sx={{
-							border: "none",
-							color: selectedTab === 1 ? "blue" : "text.primary",
+							color: abaSelecionada === "primeira" ? "blue" : "text.primary",
 						}}
-						variant="outlined"
+						variant="text"
 						size="medium"
-						onClick={() => setSelectedTab(1)}
+						onClick={() => setAbaSelecionada("primeira")}
 					>
 						First Tab
 					</Button>
 					<Button
 						sx={{
-							border: "none",
-							color: selectedTab === 2 ? "blue" : "text.primary",
+							color: abaSelecionada === "segunda" ? "blue" : "text.primary",
 						}}
-						variant="outlined"
+						variant="text"
 						size="medium"
-						onClick={() => setSelectedTab(2)}
+						onClick={() => setAbaSelecionada("segunda")}
 					>
 						Second Tab
 					</Button>
 					<Button
 						sx={{
-							border: "none",
-							color: selectedTab === 3 ? "blue" : "text.primary",
+							color: abaSelecionada === "terceira" ? "blue" : "text.primary",
 						}}
-						variant="outlined"
+						variant="text"
 						size="medium"
-						onClick={() => setSelectedTab(3)}
+						onClick={() => setAbaSelecionada("terceira")}
 					>
 						Third Tab
 					</Button>
 					<Button
 						sx={{
-							border: "none",
-							color: selectedTab === 4 ? "blue" : "text.primary",
+							color: abaSelecionada === "quarta" ? "blue" : "text.primary",
 						}}
-						variant="outlined"
+						variant="text"
 						size="medium"
-						onClick={() => setSelectedTab(4)}
+						onClick={() => setAbaSelecionada("quarta")}
 					>
 						Fourth Tab
 					</Button>
 				</Box>
-				<p className="how-use">Clique em cada botão para ser mostrado o seu respectivo conteúdo.</p>
+				<p className="how-use">
+					Clique em cada botão para ser mostrado o seu respectivo conteúdo.
+				</p>
 				<section className="tab-content">
-					{RenderizarCondicional(selectedTab)}
+					<Conteudo abaAtiva={abaSelecionada} />
 				</section>
 			</main>
 			<footer>&copy; Licenciado sob MIT</footer>
