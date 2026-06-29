@@ -1,0 +1,14 @@
+:root {
+	--primary-color: #0000;
+	--secundary-color: rgb(58, 57, 57);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 10px;
+}
