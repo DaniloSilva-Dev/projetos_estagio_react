@@ -1,24 +1,35 @@
+export const ABAS_DISPONIVEIS = {
+  PRIMEIRA: 'primeira',
+  SEGUNDA: 'segunda',
+  TERCEIRA: 'terceira',
+  QUARTA: 'quarta',
+}
+
 const conteudoAbas = {
-	primeira: {
+	[ABAS_DISPONIVEIS.PRIMEIRA]: {
 		titulo: "Conteudo da Primeira Aba",
 		paragrafo: "Aqui está o paragrafo da primeira aba",
 	},
-	segunda: {
+	[ABAS_DISPONIVEIS.SEGUNDA]: {
 		titulo: "Conteudo da Segunda Aba",
 		paragrafo: "Aqui está o paragrafo da segunda aba",
 	},
-	terceira: {
+	[ABAS_DISPONIVEIS.TERCEIRA]: {
 		titulo: "Conteudo da Terceira Aba",
 		paragrafo: "Aqui está o paragrafo da terceira aba",
 	},
-	quarta: {
+	[ABAS_DISPONIVEIS.QUARTA]: {
 		titulo: "Conteudo da Quarta Aba",
 		paragrafo: "Aqui está o paragrafo da quarta aba",
 	},
 };
 
 export default function Conteudo({ abaAtiva }) {
-	const aba = conteudoAbas[abaAtiva] || conteudoAbas.primeira;
+	const aba = conteudoAbas[abaAtiva] || conteudoAbas[ABAS_DISPONIVEIS.QUARTA];
+
+  if (abaAtiva === ABAS_DISPONIVEIS.PRIMEIRA) {
+    return <>outra coisa</>
+  }
 
 	return (
 		<>

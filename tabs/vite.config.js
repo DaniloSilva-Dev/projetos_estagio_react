@@ -8,6 +8,11 @@ export default defineConfig({
 	plugins: [react()],
   test: {
     globals: true,
-    environment: 'happy-dom'
+    environment: 'happy-dom',
+    setupFiles: ['./setup-tests.js'],
+    coverage: {
+      include: ['src/**/*.{js,jsx}'],
+      provider: 'v8'
+    }
   }
 });
