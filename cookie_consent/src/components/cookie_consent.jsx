@@ -35,7 +35,7 @@ export default function CookieConsent() {
 			<Button
 				sx={{ marginTop: 0.5 }}
 				variant="outlined"
-				className="reject"
+				className="accept"
 				onClick={aceitarCookies}
 			>
 				Aceitar Cookies!
@@ -43,7 +43,7 @@ export default function CookieConsent() {
 			<Button
 				sx={{ marginTop: 0.5 }}
 				variant="outlined"
-				className="accept"
+				className="reject"
 				onClick={recusarCookies}
 			>
 				Rejeitar Cookies!
