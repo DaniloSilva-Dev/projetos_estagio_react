@@ -54,8 +54,22 @@ export default function App() {
 	return (
 		<>
 			<main>
-				<Box sx={{ maxWidth: 600, margin: "auto", mt: 4, p: 2, justifyContent: "center", alignItems: "center" }}>
-					<Typography variant="h1" gutterBottom align="center" sx={{ fontSize: "4rem", mb: 4 }}>
+				<Box
+					sx={{
+						maxWidth: 600,
+						margin: "auto",
+						mt: 4,
+						p: 2,
+						justifyContent: "center",
+						alignItems: "center",
+					}}
+				>
+					<Typography
+						variant="h1"
+						gutterBottom
+						align="center"
+						sx={{ fontSize: "4rem", mb: 4 }}
+					>
 						Task Tracker
 					</Typography>
 
@@ -68,7 +82,7 @@ export default function App() {
 					/>
 				</Box>
 			</main>
-      <footer>&copy; Licenciado sob MIT</footer>
+			<footer>&copy; Licenciado sob MIT</footer>
 		</>
 	);
 }

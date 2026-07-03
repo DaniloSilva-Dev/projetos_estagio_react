@@ -8,12 +8,11 @@ export default function ListaTarefas({
 	onEditar,
 	onAlternarStatus,
 }) {
-
-  if(tarefas.length === 0) return null;
+	if (tarefas.length === 0) return null;
 
 	const style = {
 		py: 0,
-    justifySelf:"center",
+		justifySelf: "center",
 		width: "100%",
 		borderRadius: 2,
 		border: "1px solid",
