@@ -8,24 +8,27 @@ export default function ListaTarefas({
 	onEditar,
 	onAlternarStatus,
 }) {
+
+  if(tarefas.length === 0) return null;
+
 	const style = {
 		py: 0,
+    justifySelf:"center",
 		width: "100%",
-		maxWidth: 360,
 		borderRadius: 2,
 		border: "1px solid",
 		borderColor: "divider",
 		backgroundColor: "background.paper",
 	};
 
-	const tarefaOrdenadas = [...tarefas].sort((tarefa, outraTarefa) => {
+	const tarefasOrdenadas = [...tarefas].sort((tarefa, outraTarefa) => {
 		if (tarefa.status === outraTarefa.status) return 0;
 		return tarefa.status === "concluida" ? 1 : -1;
 	});
 
 	return (
 		<List sx={style}>
-			{tarefas.map((tarefa, indice) => (
+			{tarefasOrdenadas.map((tarefa, indice) => (
 				<Box key={tarefa.id}>
 					<TarefaItem
 						tarefa={tarefa}
@@ -33,7 +36,7 @@ export default function ListaTarefas({
 						onEditar={onEditar}
 						onAlternarStatus={onAlternarStatus}
 					/>
-					{indice < tarefaOrdenadas.length - 1 && <Divider />}
+					{indice < tarefasOrdenadas.length - 1 && <Divider />}
 				</Box>
 			))}
 		</List>

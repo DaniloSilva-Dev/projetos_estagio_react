@@ -10,7 +10,7 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 
-export default function TarefaItem({ tarefa, onDeletar, onEditar }) {
+export default function TarefaItem({ tarefa, onDeletar, onEditar, onAlternarStatus }) {
 	const isConcluida = tarefa.status === "concluida";
 
 	return (
@@ -29,7 +29,7 @@ export default function TarefaItem({ tarefa, onDeletar, onEditar }) {
 							if (novoNome) onEditar(tarefa.id, novoNome);
 						}}
 					>
-						<EditIcon />
+						<EditIcon color="primary"/>
 					</IconButton>
 
 					<IconButton
@@ -37,7 +37,7 @@ export default function TarefaItem({ tarefa, onDeletar, onEditar }) {
 						aria-label="excluir tarefa"
 						onClick={() => onDeletar(tarefa.id)}
 					>
-						<DeleteIcon />
+						<DeleteIcon color="primary" />
 					</IconButton>
 				</Box>
 			}

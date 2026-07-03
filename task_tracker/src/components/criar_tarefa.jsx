@@ -22,15 +22,15 @@ export default function CriarTarefa({ onAdicionar }) {
 			onSubmit={onEnviar}
 			noValidate
 			autoComplete="off"
-			sx={{ display: "flex", alignItems: "center" }}
+			sx={{ display: "flex", alignItems: "center", width: "100%", marginBottom: 2 }}
 		>
 			<TextField
 				label="Escreva e aperte Enter para criar a tarefa"
 				id="nomeTarefa"
 				variant="outlined"
+        fullWidth
 				value={nomeTarefa}
 				onChange={(elemento) => setNomeTarefa(elemento.target.value)}
-				sx={{ "& > :not(style)": { m: 1, width: "30rem" } }}
 				slotProps={{
 					input: {
 						endAdornment: (
