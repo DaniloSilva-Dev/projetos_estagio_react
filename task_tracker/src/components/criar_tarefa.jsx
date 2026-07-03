@@ -1,45 +1,48 @@
-import {useState} from 'react';
-import {Box, TextField, InputAdornment, IconButton} from '@mui/material';
-import SendIcon from '@mui/icons-material/Send'
+import { useState } from "react";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import InputAdornment from "@mui/material/InputAdornment";
+import IconButton from "@mui/material/IconButton";
+import SendIcon from "@mui/icons-material/Send";
 
-export default function CriarTarefa({onAdicionar}){
-  const [nomeTarefa, setNomeTarefa] = useState("");
+export default function CriarTarefa({ onAdicionar }) {
+	const [nomeTarefa, setNomeTarefa] = useState("");
 
-  function onEnviar(evento){
-    evento.preventDefault();
-    if(!nomeTarefa.trim()) return;
+	function onEnviar(evento) {
+		evento.preventDefault();
+		if (!nomeTarefa.trim()) return;
 
-    onAdicionar(nomeTarefa);
-    setNomeTarefa("");
-  }
+		onAdicionar(nomeTarefa);
+		setNomeTarefa("");
+	}
 
-    return(
-        <Box
-        component="form"
-        onSubmit={onEnviar}
-        noValidate
-        autoComplete='off'
-        sx={{display: 'flex', alignItems:'center'}}
-        >
-            <TextField
-            label="Escreva e aperte Enter para criar a tarefa"
-            id='nomeTarefa'
-            variant='outlined'
-            value={nomeTarefa}
-            onChange={(elemento) => setNomeTarefa(elemento.target.value)}
-            sx={{'& > :not(style)' : {m: 1, width: '30rem'} }}
-            slotProps={{
-                input: {
-                    endAdornment:(
-                        <InputAdornment position='end'>
-                            <IconButton type='submit' color='primary'>
-                                <SendIcon/>
-                            </IconButton>
-                        </InputAdornment>
-                    )
-                }
-            }}
-            />
-        </Box>
-    );
+	return (
+		<Box
+			component="form"
+			onSubmit={onEnviar}
+			noValidate
+			autoComplete="off"
+			sx={{ display: "flex", alignItems: "center" }}
+		>
+			<TextField
+				label="Escreva e aperte Enter para criar a tarefa"
+				id="nomeTarefa"
+				variant="outlined"
+				value={nomeTarefa}
+				onChange={(elemento) => setNomeTarefa(elemento.target.value)}
+				sx={{ "& > :not(style)": { m: 1, width: "30rem" } }}
+				slotProps={{
+					input: {
+						endAdornment: (
+							<InputAdornment position="end">
+								<IconButton type="submit" color="primary">
+									<SendIcon />
+								</IconButton>
+							</InputAdornment>
+						),
+					},
+				}}
+			/>
+		</Box>
+	);
 }
