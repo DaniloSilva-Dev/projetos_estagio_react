@@ -1,5 +1,5 @@
 {
-	"name": "projeto_cookies",
+	"name": "task_tracker",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -11,23 +11,19 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@biomejs/biome": "^2.5.0",
 		"@emotion/react": "^11.14.0",
 		"@emotion/styled": "^11.14.1",
+		"@mui/icons-material": "^9.1.1",
 		"@mui/material": "^9.1.1",
 		"react": "^19.2.6",
 		"react-dom": "^19.2.6"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.5.0",
-		"@testing-library/dom": "^10.4.1",
-		"@testing-library/jest-dom": "^6.9.1",
-		"@testing-library/react": "^16.3.2",
-		"@types/react": "^19.2.17",
+		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
 		"@vitejs/plugin-react": "^6.0.1",
 		"globals": "^17.6.0",
-		"happy-dom": "^20.10.6",
-		"vite": "^8.0.12",
-		"vitest": "^4.1.9"
+		"vite": "^8.0.12"
 	}
 }
