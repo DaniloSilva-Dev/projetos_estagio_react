@@ -49,6 +49,7 @@ export default function TarefaItem({
 		>
 			<ListItemIcon>
 				<Checkbox
+          data-testid="alternar status da tarefa"
 					edge="start"
 					checked={isConcluida}
 					onChange={() => onAlternarStatus(tarefa.id)}

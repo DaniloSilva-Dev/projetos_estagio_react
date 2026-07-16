@@ -66,9 +66,9 @@ export default function TarefaItem({
 								variant="outlined"
 								value={novoNome}
 								onChange={(evento) => setNovoNome(evento.target.value)}
-                onKeyPress={(evento) => (
-                  evento.key === "Enter" ? salvarEdicao() : null
-                )}
+								onKeyPress={(evento) =>
+									evento.key === "Enter" ? salvarEdicao() : null
+								}
 							/>
 						</DialogContent>
 						<DialogActions>
@@ -93,6 +93,7 @@ export default function TarefaItem({
 		>
 			<ListItemIcon>
 				<Checkbox
+          data-testid="checkbox-tarefa"
 					edge="start"
 					checked={isConcluida}
 					onChange={() => onAlternarStatus(tarefa.id)}
