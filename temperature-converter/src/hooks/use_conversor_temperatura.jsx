@@ -16,8 +16,8 @@ const deCelsius = {
 
 function converterValorTemperatura(valor, unidadeOrigem, unidadeDestino) {
 	const numero = Number(valor);
-	const celsiusValue = paraCelsius[unidadeOrigem](numero);
-	return deCelsius[unidadeDestino](celsiusValue);
+	const valorCelsius = paraCelsius[unidadeOrigem](numero);
+	return deCelsius[unidadeDestino](valorCelsius);
 }
 
 export default function useConversorTemperatura() {
