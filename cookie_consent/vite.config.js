@@ -4,8 +4,14 @@ import react from "@vitejs/plugin-react";
 // https://vite.dev/config/
 export default defineConfig({
 	plugins: [react()],
-  test: {
+    test: {
     globals: true,
-    environment: 'happy-dom'
+    environment: 'happy-dom',
+    setupFiles: ['./src/setup-tests.js'],
+    coverage: {
+      include: ['src/**/*.{js,jsx}'],
+      exclude: ['src/**/*.test.{js,jsx}', 'src/main.jsx', 'src/App.jsx'],
+      provider: 'v8'
+    }
   }
 });
