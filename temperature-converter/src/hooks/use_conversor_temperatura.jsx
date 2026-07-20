@@ -3,15 +3,15 @@ import { useState } from "react";
 const KELVIN_OFFSET = 273.15;
 
 const paraCelsius = {
-	C: (value) => value,
-	F: (value) => ((value - 32) * 5) / 9,
-	K: (value) => value - KELVIN_OFFSET,
+	C: (valor) => valor,
+	F: (valor) => ((valor - 32) * 5) / 9,
+	K: (valor) => valor - KELVIN_OFFSET,
 };
 
 const deCelsius = {
-	C: (value) => value,
-	F: (value) => (value * 9) / 5 + 32,
-	K: (value) => value + KELVIN_OFFSET,
+	C: (valor) => valor,
+	F: (valor) => (valor * 9) / 5 + 32,
+	K: (valor) => valor + KELVIN_OFFSET,
 };
 
 function converterValorTemperatura(valor, unidadeOrigem, unidadeDestino) {
