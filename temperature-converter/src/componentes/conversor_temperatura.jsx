@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
 	Typography,
 	TextField,
@@ -8,43 +8,39 @@ import {
 	MenuItem,
 } from "@mui/material";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
-import useConversorTemperatura from "../hooks/useConversorTemperatura";
+import useConversorTemperatura from "../hooks/use_conversor_temperatura";
 
 export default function ConversorTemperatura() {
+	const unidadesConhecidas = { C: "C", F: "F", K: "K" };
 	const { temperatura, setTemperatura, resultado, converterTemperatura } =
 		useConversorTemperatura();
 
-	const [unidadeOrigem, setUnidadeOrigem] = useState("");
-	const [unidadeDestino, setUnidadeDestino] = useState("");
+	const [unidadeOrigem, setUnidadeOrigem] = useState(unidadesConhecidas.C);
+	const [unidadeDestino, setUnidadeDestino] = useState(unidadesConhecidas.F);
 	const [unidadeResultado, setUnidadeResultado] = useState("");
-	const [submitPendente, setSubmitPendente] = useState(false);
-	const podeConverter =
-		temperatura !== "" && unidadeOrigem !== "" && unidadeDestino !== "";
+	const [envioPendente, setEnvioPendente] = useState(false);
+	const formularioInvalido = !temperatura || !unidadeOrigem || !unidadeDestino;
 
-	const handleConverter = () => {
-		if (!podeConverter) {
-			return;
-		}
+	const lidarEnvio = (evento) => {
+		evento.preventDefault();
+		setEnvioPendente(true);
+	};
 
+	const lidarConversao = () => {
 		converterTemperatura(temperatura, unidadeOrigem, unidadeDestino);
 		setUnidadeResultado(unidadeDestino);
 	};
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		setSubmitPendente(true);
-	};
-
 	useEffect(() => {
-		if (!submitPendente) {
+		if (!envioPendente) {
 			return;
 		}
 
-		handleConverter();
-		setSubmitPendente(false);
-	}, [submitPendente, temperatura, unidadeOrigem, unidadeDestino]);
+		lidarConversao();
+		setEnvioPendente(false);
+	}, [envioPendente, temperatura, unidadeOrigem, unidadeDestino]);
 
-	const handleSwapUnidades = () => {
+	const trocarUnidades = () => {
 		const novaUnidadeOrigem = unidadeDestino;
 		const novaUnidadeDestino = unidadeOrigem;
 
@@ -66,8 +62,8 @@ export default function ConversorTemperatura() {
 			<Typography variant="h5" gutterBottom>
 				Conversor de Temperatura
 			</Typography>
-			<Box component="form" onSubmit={handleSubmit}>
-				<Box display="flex" alignItems="center" gap={1} mb={2} flexWrap="wrap">
+			<Box component="form" onSubmit={lidarEnvio}>
+				<Box display="flex" gap={1} mb={2} >
 					<TextField
 						label="Temperatura"
 						type="number"
@@ -92,7 +88,7 @@ export default function ConversorTemperatura() {
 						<MenuItem value="F">Fahrenheit (°F)</MenuItem>
 						<MenuItem value="K">Kelvin (K)</MenuItem>
 					</TextField>
-					<IconButton onClick={handleSwapUnidades}>
+					<IconButton onClick={trocarUnidades}>
 						<SwapHorizIcon />
 					</IconButton>
 					<TextField
@@ -112,7 +108,7 @@ export default function ConversorTemperatura() {
 						<MenuItem value="K">Kelvin (K)</MenuItem>
 					</TextField>
 				</Box>
-				<Button type="submit" variant="contained" disabled={!podeConverter}>
+				<Button type="submit" variant="contained" disabled={formularioInvalido}>
 					Converter
 				</Button>
 			</Box>
