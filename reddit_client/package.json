@@ -1,0 +1,36 @@
+{
+  "name": "reddit_client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest run --coverage",
+    "build": "vite build",
+    "lint": "biome check .",
+    "format": "biome format . --write",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@biomejs/biome": "^2.5.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.1.1",
+    "@mui/material": "^9.1.1",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "vitest": "^4.1.10"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/coverage-v8": "^4.1.10",
+    "globals": "^17.6.0",
+    "happy-dom": "^20.11.1",
+    "vite": "^8.0.12"
+  }
+}
